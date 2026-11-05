@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ECheCactus</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌵</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- GitHub Pages serves this page for every path that has no file,
+       including the label links /p/<CODE>. -->
+  <main>
+    <h1>ECheCactus</h1>
+    <p class="tagline">Etichetta di una pianta · plant label</p>
+    <p class="code" id="code" hidden></p>
+
+    <div id="label">
+      <section lang="it">
+        <h2>Italiano</h2>
+        <p>Hai inquadrato l'etichetta di una pianta. La pianta fa parte di una collezione gestita con ECheCactus, un'app Android per collezionisti di cactus e piante grasse.</p>
+        <p>I dati della pianta sono solo sul telefono del suo proprietario: questo sito non ne contiene. Chi ha l'app installata la apre direttamente inquadrando l'etichetta.</p>
+        <p>L'app è in sviluppo e non è ancora disponibile.</p>
+      </section>
+
+      <section lang="en">
+        <h2>English</h2>
+        <p>You scanned a plant label. The plant belongs to a collection kept with ECheCactus, an Android app for cactus and succulent collectors.</p>
+        <p>The plant's data is only on its owner's phone; this website holds none. With the app installed, scanning the label opens it directly.</p>
+        <p>The app is in development and not available yet.</p>
+      </section>
+    </div>
+
+    <div id="notfound" hidden>
+      <section>
+        <p lang="it">Pagina non trovata.</p>
+        <p lang="en">Page not found.</p>
+      </section>
+    </div>
+
+    <footer><a href="/">echecactus.it</a> · Nessun cookie, nessun tracciamento. · No cookies, no tracking.</footer>
+  </main>
+  <script>
+    // Label links look like /p/K7F2. Show the code; anything else is a plain "not found".
+    const m = location.pathname.match(/^\/p\/([0-9a-z]{1,8})\/?$/i);
+    if (m) {
+      const code = document.getElementById("code");
+      code.textContent = m[1].toUpperCase();
+      code.hidden = false;
+    } else {
+      document.getElementById("label").hidden = true;
+      document.getElementById("notfound").hidden = false;
+      document.querySelector(".tagline").hidden = true;
+    }
+  </script>
+</body>
+</html>
