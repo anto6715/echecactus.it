@@ -15,4 +15,4 @@ GitHub Pages, deployed from the `main` branch, root folder. A push to `main` pub
 ## Rules for `assetlinks.json`
 - Never remove the entry of an app version people have installed. Android rechecks the file when the app is installed or updated, and without its entry, labels open in the browser instead of the app.
 - At release, add the fingerprint of Google Play's app signing key (Play Console → App integrity), next to the development key.
-- Current entries: `io.github.anto6715.applinks_test`, the M0b App Links test app (debug key). It can be removed once the test is over.
+- Current entries: none. The M0b test app was removed after the test (2026-11-08). The real app, `it.echecactus.app` with the debug key, is added in ECheCactus M2 step 6.
